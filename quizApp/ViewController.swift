@@ -25,12 +25,8 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-    
     var questionNumber = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,33 +38,50 @@ class ViewController: UIViewController {
         
     }
     
-    func updateUI(){
-        if questionNumber + 1 < questionBank.count {
-      
-            questions.text = questionBank[questionNumber][0]
-        }
+    @objc func updateUI(){
+        
+        questions.text = questionBank[questionNumber][0]
+        trueButton.backgroundColor = UIColor.clear
+        falseButton.backgroundColor = UIColor.clear
+        
         
     }
-
     
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        questionNumber += 1
-        
+
         let userInput = sender.currentTitle!
-        let actualAnswer = questionBank[questionNumber][1]
-        updateUI()
+        
+        if userInput == questionBank[questionNumber][1]{
+            sender.backgroundColor = UIColor.green
+            
+        }
+        
+        else {
+            sender.backgroundColor = UIColor.red
+        }
         
         
         
         
         
+        if questionNumber + 1 < questionBank.count {
+            questionNumber += 1
+        }
+        
+        else {
+            questionNumber = 0
+            
+        }
+        
+        Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
+
         
         
         
     }
   
 
-}
+
+    }
 
