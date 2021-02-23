@@ -21,7 +21,9 @@ class ViewController: UIViewController {
     
     //Structures or Classes allow you to store two different data types together
     
-    var questionBank = [["4 + 2 = 7", "False"], ["5 + 3 = 8","True"],[ " 1 + 1 = 3", "False"]]
+//    var questionBank = [["4 + 2 = 7", "False"], ["5 + 3 = 8","True"],[ " 1 + 1 = 3", "False"]]
+    
+    var questionBank = [Questions(text: "4 + 2 = 7", answer: "False"),Questions(text: "5 + 3 = 8", answer: "True") , Questions(text:  "1 + 1 = 3", answer: "False")]
     
     
     
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
     
     @objc func updateUI(){
         
-        questions.text = questionBank[questionNumber][0]
+        questions.text = questionBank[questionNumber].text
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
         
@@ -52,7 +54,7 @@ class ViewController: UIViewController {
 
         let userInput = sender.currentTitle!
         
-        if userInput == questionBank[questionNumber][1]{
+        if userInput == questionBank[questionNumber].answer{
             sender.backgroundColor = UIColor.green
             
         }

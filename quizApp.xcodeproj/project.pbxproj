@@ -13,6 +13,7 @@
 		0138195A25DED642008091A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0138195825DED642008091A2 /* Main.storyboard */; };
 		0138195C25DED646008091A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0138195B25DED646008091A2 /* Assets.xcassets */; };
 		0138195F25DED646008091A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0138195D25DED646008091A2 /* LaunchScreen.storyboard */; };
+		086F24E425E5745B005E5CC6 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086F24E325E5745B005E5CC6 /* Questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0138195B25DED646008091A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0138195E25DED646008091A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0138196025DED646008091A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		086F24E325E5745B005E5CC6 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				0138195225DED642008091A2 /* AppDelegate.swift */,
 				0138195425DED642008091A2 /* SceneDelegate.swift */,
 				0138195625DED642008091A2 /* ViewController.swift */,
+				086F24E325E5745B005E5CC6 /* Questions.swift */,
 				0138195825DED642008091A2 /* Main.storyboard */,
 				0138195B25DED646008091A2 /* Assets.xcassets */,
 				0138195D25DED646008091A2 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0138195725DED642008091A2 /* ViewController.swift in Sources */,
+				086F24E425E5745B005E5CC6 /* Questions.swift in Sources */,
 				0138195325DED642008091A2 /* AppDelegate.swift in Sources */,
 				0138195525DED642008091A2 /* SceneDelegate.swift in Sources */,
 			);
