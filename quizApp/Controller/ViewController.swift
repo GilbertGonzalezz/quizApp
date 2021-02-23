@@ -23,13 +23,9 @@ class ViewController: UIViewController {
     
 //    var questionBank = [["4 + 2 = 7", "False"], ["5 + 3 = 8","True"],[ " 1 + 1 = 3", "False"]]
     
-    var questionBank = [Questions(text: "4 + 2 = 7", answer: "False"),Questions(text: "5 + 3 = 8", answer: "True") , Questions(text:  "1 + 1 = 3", answer: "False")]
     
-    
-    
-    var questionNumber = 0
-    
-    
+    var quizzbrain = QuizBrain()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,7 +38,7 @@ class ViewController: UIViewController {
     
     @objc func updateUI(){
         
-        questions.text = questionBank[questionNumber].text
+        questions.text = quizzbrain.questionBank[questionNumber].text
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
         
@@ -54,7 +50,9 @@ class ViewController: UIViewController {
 
         let userInput = sender.currentTitle!
         
-        if userInput == questionBank[questionNumber].answer{
+        let checkFile = quizzbrain.checkAnswer(userInput)
+        
+        if checkFile is True questionBank[questionNumber].answer{
             sender.backgroundColor = UIColor.green
             
         }
