@@ -38,9 +38,10 @@ class ViewController: UIViewController {
     
     @objc func updateUI(){
         
-        questions.text = quizzbrain.questionBank[questionNumber].text
+        questions.text = quizzbrain.questionText()
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
+        progressBar.progress = quizzbrain.progressStatus()
         
         
     }
@@ -52,7 +53,7 @@ class ViewController: UIViewController {
         
         let checkFile = quizzbrain.checkAnswer(userInput)
         
-        if checkFile is True questionBank[questionNumber].answer{
+        if checkFile {
             sender.backgroundColor = UIColor.green
             
         }
@@ -64,15 +65,8 @@ class ViewController: UIViewController {
         
         
         
-        
-        if questionNumber + 1 < questionBank.count {
-            questionNumber += 1
-        }
-        
-        else {
-            questionNumber = 0
-            
-        }
+        quizzbrain.nextQuestion()
+
         
         Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(updateUI), userInfo: nil, repeats: true)
 
